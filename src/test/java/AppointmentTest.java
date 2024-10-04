@@ -20,12 +20,13 @@ class AppointmentTest {
     public void testId() {
 
         Date currentDate = new Date (System.currentTimeMillis());
+        Date afterToday = new Date(currentDate.getTime() + 100000);  // Ensures appointment date is in the future
 
         assertThrows(IllegalArgumentException.class, () -> {
-            new Appointment(null, new Date(currentDate.getTime()), "Annual physical appointment");
+            new Appointment(null, afterToday, "Annual physical appointment");
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            new Appointment("12345678910", new Date(currentDate.getTime()), "Annual physical appointment");
+            new Appointment("12345678910", afterToday, "Annual physical appointment");
         });
     }
 
@@ -50,12 +51,13 @@ class AppointmentTest {
     public void testDescription() {
 
         Date currentDate = new Date (System.currentTimeMillis());
+        Date afterToday = new Date(currentDate.getTime() + 100000);  // Ensures appointment date is in the future
 
         assertThrows(IllegalArgumentException.class, () -> {
-            new Appointment("12345678", new Date(currentDate.getTime()), null);
+            new Appointment("12345678", afterToday, null);
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            new Appointment("12345678", new Date(currentDate.getTime()), "A very long appointment description that does not meet the maximum length requirements");
+            new Appointment("12345678", afterToday, "A very long appointment description that does not meet the maximum length requirements");
         });
     }
 }

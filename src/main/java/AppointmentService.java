@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class AppointmentService {
 
-    private ArrayList<Appointment> list = new ArrayList<Appointment>();
+    ArrayList<Appointment> list = new ArrayList<Appointment>();
 
     // addAppointment function (IDs must be unique)
     public boolean addAppointment(Appointment appointment) {  // Create Appointment and pass appointment object
