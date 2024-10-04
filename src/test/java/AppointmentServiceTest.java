@@ -59,7 +59,7 @@ class AppointmentServiceTest {
         // Do the appointment descriptions at these positions in the array match these expected values?
         assertEquals("Annual physical appointment", appointmentService.list.get(0).getDescription());
         assertEquals("Dentist appointment", appointmentService.list.get(1).getDescription());
-        assertEquals("Optometry appointment", appointmentService.list.get(3).getDescription());
+        assertEquals("Optometry appointment", appointmentService.list.get(2).getDescription());
     }
 
     @Test
